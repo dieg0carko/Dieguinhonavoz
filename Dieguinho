@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dieguinho na Voz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #2f2f2f;
+      background-image: repeating-radial-gradient(circle at center, #444 0, #444 2px, #2f2f2f 3px, #2f2f2f 6px);
+      color: #eee;
+      line-height: 1.6;
+      font-size: 18px;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #4b4b4bcc;
+      color: #fff;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      z-index: 1000;
+      border-radius: 0 0 20px 20px;
+      backdrop-filter: blur(8px);
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-weight: 400;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #ff6f00cc;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 88px;
+      z-index: 999;
+      border-radius: 0 0 20px 20px;
+    }
+    nav a {
+      color: #fff;
+      padding: 18px 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      border-bottom: 3px solid transparent;
+      transition: color 0.3s, border-bottom-color 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #2f2f2f;
+      border-bottom-color: #2f2f2f;
+      background: #fff2cc;
+      border-radius: 6px 6px 0 0;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+      background: #444444cc;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      color: #eee;
+      backdrop-filter: blur(10px);
+    }
+    section {
+      padding: 40px 30px;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #ff6f00;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    p {
+      margin-bottom: 18px;
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0;
+    }
+    ul li {
+      background: #5a5a5aaa;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 15px rgba(255, 111, 0, 0.3);
+      cursor: pointer;
+    }
+    ul li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255, 111, 0, 0.7);
+      border-color: #ff6f00;
+    }
+    ul li a {
+      color: #ff6f00;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+    }
+    ul li a:hover {
+      color: #fff;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #ff6f00, #ffa500);
+      color: #2f2f2f;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      transition: background 0.4s ease;
+      text-align: center;
+      margin-top: 10px;
+      box-shadow: 0 6px 15px rgba(255, 111, 0, 0.5);
+    }
+    .btn:hover {
+      background: linear-gradient(90deg, #ffa500, #ff6f00);
+      box-shadow: 0 10px 25px rgba(255, 111, 0, 0.7);
+    }
+    footer {
+      background: #4b4b4bcc;
+      color: #fff;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
+      border-radius: 20px 20px 0 0;
+      position: relative;
+      z-index: 1000;
+    }
+    @media (max-width: 768px) {
+      ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      nav a {
+        flex: 1 1 45%;
+        margin: 5px 0;
+        text-align: center;
+      }
+      section {
+        padding: 30px 20px;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dieguinho na Voz</h1>
+    <p>Blog oficial sobre o talento de Dieguinho</p>
+  </header>
+
+  <nav>
+    <a href="#inicio" class="active">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#musicas">Músicas</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h2>Bem-vindo!</h2>
+      <p>Este é o blog oficial de Dieguinho na Voz. Acompanhe todas as novidades, músicas e vídeos desse talento incrível.</p>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre Dieguinho</h2>
+      <p>Dieguinho é um cantor e compositor brasileiro que vem conquistando o público com sua voz marcante e interpretações emocionantes. Ele compartilha suas músicas e covers em plataformas digitais e redes sociais.</p>
+    </section>
+
+    <section id="musicas">
+      <h2>Músicas</h2>
+      <ul>
+        <li><a href="https://suamusica.com.br/dieguinhonavoz/dieguinho-na-voz-vol-01" target="_blank" rel="noopener noreferrer">Vol. 01 - Arrocha</a></li>
+        <li><a href="https://suamusica.com.br/dieguinhonavoz/dieguinhonavoz-vol2" target="_blank" rel="noopener noreferrer">Vol. 02 - Arrocha</a></li>
+      </ul>
+    </section>
+
+    <section id="videos">
+      <h2>Vídeos</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=qOqZeQLJNLQ" target="_blank" rel="noopener noreferrer">Seu Polícia (Cover)</a></li>
+        <li><a href="https://www.youtube.com/watch?v=5ZsoZ5Jw-FA" target="_blank" rel="noopener noreferrer">Esse Coração Aí (Autoral)</a></li>
+        <li><a href="https://www.youtube.com/watch?v=vgVSH8yWIro" target="_blank" rel="noopener noreferrer">Diz Pra Mim (Cover)</a></li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Para entrar em contato com Dieguinho, envie um e-mail para: dieguinhonavoz@example.com</p>
+      <p>Siga também nas redes sociais:</p>
+      <ul>
+        <li><a href="https://www.instagram.com/dieguinhonavoz/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@Diegosilvanavoz" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+      </ul>
+      <button class="btn" onclick="window.location.href='mailto:dieguinhonavoz@example.com'">Enviar E-mail</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dieguinho na Voz. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
